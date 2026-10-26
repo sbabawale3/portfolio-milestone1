@@ -3,52 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adeoluwa Babawale | Developer & Creator Portfolio</title>
+    <title>The Art of Specialty Coffee | A Guide to Brewing & Beans</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Adeoluwa Babawale</h1>
+    <header style="background-color: #1A365D; color: #FFFFFF; padding: 20px; text-align: center;">
+        <h1 style="color: #FFFFFF;">The Art &amp; Craft of Specialty Coffee</h1>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="about.html">About &amp; Contact</a></li>
+            <ul style="list-style: none; padding: 0; display: flex; justify-content: center; gap: 15px;">
+                <li><a href="#about" class="nav-link">About Specialty Coffee</a></li>
+                <li><a href="#brewing" class="nav-link">Brewing Methods</a></li>
+                <li><a href="#flavor-notes" class="nav-link">Flavor Profiles</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="hero">
-            <h2>Web Developer &amp; Tech Enthusiast</h2>
-            <p>Welcome to my personal portfolio site. I build clean, responsive web solutions and explore modern frontend development.</p>
-        </section>
-
-        <section id="featured">
-            <h2>Featured Work</h2>
-            <article>
-                <h3>Portfolio Foundation</h3>
-                <p>A semantic HTML skeleton showcasing structured web development fundamentals.</p>
-            </article>
-            <article>
-                <h3>E-Commerce &amp; Web Projects</h3>
-                <p>Interactive web applications designed with accessibility and performance in mind.</p>
+        <section id="about">
+            <h2>What is Specialty Coffee?</h2>
+            <p>Specialty coffee refers to the highest grade of coffee available, typically grown at high altitudes, cultivated with care, and roasted to highlight unique regional characteristics.</p>
+            
+            <figure class="featured-image">
+                <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80" alt="Freshly roasted specialty coffee beans resting in a ceramic bowl alongside a copper measuring spoon">
+                <figcaption>Freshly roasted specialty coffee beans showcasing a light-to-medium roast profile.</figcaption>
+            </figure>
+            
+            <article class="coffee-card">
+                <h3>The Origin Story</h3>
+                <p>Unlike commercial coffee, specialty beans are fully traceable to specific farms or micro-lots, ensuring ethical trade and superior quality control from seed to cup.</p>
             </article>
         </section>
 
-        <section id="highlights">
-            <h2>Core Skills</h2>
-            <ul>
-                <li>HTML5 &amp; Semantic Markup</li>
-                <li>CSS Layouts &amp; Responsive Design</li>
-                <li>JavaScript Fundamentals</li>
-                <li>Git &amp; GitHub Version Control</li>
-            </ul>
+        <section id="brewing">
+            <h2>Popular Manual Brewing Methods</h2>
+            <p>Brewing specialty coffee is both a science and an art. The extraction method significantly influences the taste profile of the final cup.</p>
+            
+            <ol>
+                <li><strong>Pour-Over (V60 / Chemex):</strong> Highlights bright acidity, floral notes, and clean body.</li>
+                <li><strong>French Press:</strong> Emphasizes full body, rich oils, and deep chocolatey notes.</li>
+                <li><strong>Aeropress:</strong> Offers high versatility, allowing for concentrated shot-like brews or smooth immersion cups.</li>
+                <li><strong>Espresso:</strong> Uses high pressure to extract a rich, dense shot topped with natural crema.</li>
+            </ol>
+        </section>
+
+        <section id="flavor-notes">
+            <h2>Understanding Flavor Profiles</h2>
+            
+            <article class="coffee-card">
+                <h3>Acidity &amp; Brightness</h3>
+                <p>High-altitude Arabica coffee often exhibits crisp fruit acidity, reminiscent of citrus, berries, or green apples.</p>
+            </article>
+
+            <article class="coffee-card">
+                <h3>Sweetness &amp; Body</h3>
+                <p>Natural sugars caramelize during roasting, creating rich sweetness reminiscent of cane sugar, honey, or milk chocolate.</p>
+            </article>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Adeoluwa Babawale. All rights reserved.</p>
+    <footer style="text-align: center; padding: 20px; background-color: #1A365D; color: #FFFFFF; margin-top: 40px;">
+        <p style="margin: 0;">&copy; 2026 The Specialty Coffee Guide. Built with semantic HTML5 &amp; CSS3.</p>
     </footer>
 
 </body>
