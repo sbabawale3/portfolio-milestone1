@@ -1,0 +1,101 @@
+/* ==========================================================================
+   GLOBAL & TYPE SELECTORS
+   ========================================================================== */
+
+/* Type Selector 1: Body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #2D3748; /* Dark Charcoal Text */
+    background-color: #F7FAFC; /* Soft Warm Background */
+    margin: 0;
+    padding: 0;
+}
+
+/* Type Selector 2: Main & Headings */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    color: #2B6CB0; /* Slate Blue Accent */
+    margin-top: 0;
+}
+
+/* Type Selector 3: Paragraphs & Lists */
+p, li {
+    font-size: 1.05rem;
+}
+
+/* ==========================================================================
+   ID SELECTORS & BOX MODEL DEMONSTRATION
+   ========================================================================== */
+
+/* ID Selector 1 & Box Model Element 1: Hero/About Section */
+#about {
+    background-color: #FFFFFF;
+    margin: 30px 0;
+    padding: 24px;
+    border: 2px solid #E2E8F0;
+    border-left: 6px solid #2B6CB0; /* Strong accent border */
+    border-radius: 8px;
+}
+
+/* ID Selector 2 & Box Model Element 2: Brewing Section */
+#brewing {
+    background-color: #EDF2F7;
+    margin: 30px 0;
+    padding: 24px;
+    border: 1px solid #CBD5E0;
+    border-radius: 8px;
+}
+
+/* ID Selector 3: Flavor Notes Section */
+#flavor-notes {
+    margin: 30px 0;
+}
+
+/* ==========================================================================
+   CLASS SELECTORS & BOX MODEL DEMONSTRATION
+   ========================================================================== */
+
+/* Class Selector 1 & Box Model Element 3: Coffee Cards / Articles */
+.coffee-card {
+    background-color: #FFFFFF;
+    margin: 15px 0;
+    padding: 20px;
+    border: 1px solid #E2E8F0;
+    border-top: 4px solid #D69E2E; /* Warm Gold Accent Border */
+    border-radius: 6px;
+}
+
+/* Class Selector 2: Navigation Links */
+.nav-link {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+.nav-link:hover {
+    background-color: #2B6CB0;
+}
+
+/* Class Selector 3: Featured Figure / Image Styling */
+.featured-image {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid #CBD5E0;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.featured-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
