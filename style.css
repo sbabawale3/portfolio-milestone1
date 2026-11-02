@@ -1,101 +1,193 @@
 /* ==========================================================================
-   GLOBAL & TYPE SELECTORS
+   GOOGLE FONTS & DESIGN SYSTEM SETUP
    ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap');
 
-/* Type Selector 1: Body */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #2D3748; /* Dark Charcoal Text */
-    background-color: #F7FAFC; /* Soft Warm Background */
+:root {
+    /* Color Palette */
+    --primary-navy: #0F172A;
+    --accent-blue: #2563EB;
+    --bg-light: #F8FAFC;
+    --text-slate: #334155;
+    --card-white: #FFFFFF;
+    --border-subtle: #E2E8F0;
+
+    /* 8px Base Spacing System */
+    --space-8: 8px;
+    --space-16: 16px;
+    --space-24: 24px;
+    --space-32: 32px;
+    --space-48: 48px;
+}
+
+/* ==========================================================================
+   GLOBAL & TYPE SELECTORS (Selector Type 1)
+   ========================================================================== */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Type Selector 2: Main & Headings */
-main {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 0 20px;
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-slate);
+    background-color: var(--bg-light);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 h1, h2, h3 {
-    color: #2B6CB0; /* Slate Blue Accent */
-    margin-top: 0;
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--primary-navy);
+    line-height: 1.2;
 }
 
-/* Type Selector 3: Paragraphs & Lists */
-p, li {
-    font-size: 1.05rem;
+h1 { font-size: 1.75rem; }
+h2 { font-size: 1.5rem; margin-bottom: var(--space-16); }
+h3 { font-size: 1.2rem; margin-bottom: var(--space-8); }
+
+p {
+    margin-bottom: var(--space-16);
 }
 
-/* ==========================================================================
-   ID SELECTORS & BOX MODEL DEMONSTRATION
-   ========================================================================== */
-
-/* ID Selector 1 & Box Model Element 1: Hero/About Section */
-#about {
-    background-color: #FFFFFF;
-    margin: 30px 0;
-    padding: 24px;
-    border: 2px solid #E2E8F0;
-    border-left: 6px solid #2B6CB0; /* Strong accent border */
-    border-radius: 8px;
-}
-
-/* ID Selector 2 & Box Model Element 2: Brewing Section */
-#brewing {
-    background-color: #EDF2F7;
-    margin: 30px 0;
-    padding: 24px;
-    border: 1px solid #CBD5E0;
-    border-radius: 8px;
-}
-
-/* ID Selector 3: Flavor Notes Section */
-#flavor-notes {
-    margin: 30px 0;
+main {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: var(--space-24) var(--space-16);
+    flex: 1;
 }
 
 /* ==========================================================================
-   CLASS SELECTORS & BOX MODEL DEMONSTRATION
+   HEADER & NAVIGATION (Flexbox Layout)
    ========================================================================== */
-
-/* Class Selector 1 & Box Model Element 3: Coffee Cards / Articles */
-.coffee-card {
-    background-color: #FFFFFF;
-    margin: 15px 0;
-    padding: 20px;
-    border: 1px solid #E2E8F0;
-    border-top: 4px solid #D69E2E; /* Warm Gold Accent Border */
-    border-radius: 6px;
+header {
+    background-color: var(--primary-navy);
+    color: white;
+    padding: var(--space-16) var(--space-24);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-16);
 }
 
-/* Class Selector 2: Navigation Links */
-.nav-link {
-    color: #FFFFFF;
+header h1 {
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: var(--space-16);
+}
+
+nav a {
+    color: white;
     text-decoration: none;
-    font-weight: 600;
-    padding: 6px 12px;
+    font-weight: 500;
+    padding: var(--space-8) var(--space-16);
     border-radius: 4px;
+    transition: background-color 0.2s;
 }
 
-.nav-link:hover {
-    background-color: #2B6CB0;
+nav a:hover,
+nav a.active {
+    background-color: var(--accent-blue);
 }
 
-/* Class Selector 3: Featured Figure / Image Styling */
-.featured-image {
-    margin: 20px 0;
-    padding: 10px;
-    background-color: #FFFFFF;
-    border: 1px solid #CBD5E0;
+/* ==========================================================================
+   ID SELECTORS (Selector Type 2) & CONTAINER SPACING
+   ========================================================================== */
+#hero {
+    background-color: var(--card-white);
+    padding: var(--space-32);
     border-radius: 8px;
-    text-align: center;
+    border: 1px solid var(--border-subtle);
+    border-left: 6px solid var(--accent-blue);
+    margin-bottom: var(--space-32);
 }
 
-.featured-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
+#project-list, #about-me, #contact-info {
+    margin-bottom: var(--space-32);
+}
+
+/* ==========================================================================
+   CLASS SELECTORS (Selector Type 3) & GRID LAYOUTS
+   ========================================================================== */
+/* Multi-column Grid Layout for Cards */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile Default */
+    gap: var(--space-24);
+    margin-top: var(--space-16);
+}
+
+.card {
+    background-color: var(--card-white);
+    padding: var(--space-24);
+    border-radius: 8px;
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.skills-list, .contact-list {
+    list-style-type: square;
+    padding-left: var(--space-24);
+}
+
+.skills-list li, .contact-list li {
+    margin-bottom: var(--space-8);
+}
+
+/* Footer Styling */
+footer {
+    background-color: var(--primary-navy);
+    color: white;
+    text-align: center;
+    padding: var(--space-24);
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   RESPONSIVENESS & MEDIA QUERIES
+   ========================================================================== */
+
+/* Breakpoint 1: Tablet (768px and up) */
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+
+    /* Switch card grid to 2 columns on tablet */
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Breakpoint 2: Desktop (1200px and up) */
+@media (min-width: 1200px) {
+    main {
+        padding: var(--space-48) var(--space-24);
+    }
+
+    /* Switch card grid to 3 columns on large screens */
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #hero {
+        padding: var(--space-48);
+    }
 }
