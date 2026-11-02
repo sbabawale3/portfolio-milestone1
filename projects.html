@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Adeoluwa Babawale Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -12,7 +16,7 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
                 <li><a href="about.html">About &amp; Contact</a></li>
             </ul>
         </nav>
@@ -23,23 +27,34 @@
             <h2>Selected Development Projects</h2>
             <p>Here is a showcase of web development projects highlighting semantic structure, styling, and interactive features.</p>
 
-            <article>
-                <h3>Personal Portfolio Site</h3>
-                <p>Multi-page personal website built with semantic HTML5 and deployed via GitHub Pages.</p>
-                <ul>
-                    <li>Tech Stack: HTML, CSS, Git</li>
-                    <li>Status: In Progress</li>
-                </ul>
-            </article>
+            <div class="grid-container">
+                <article class="card">
+                    <h3>Personal Portfolio Site</h3>
+                    <p>Multi-page personal website built with semantic HTML5 and deployed via GitHub Pages.</p>
+                    <ul class="skills-list">
+                        <li><strong>Tech Stack:</strong> HTML, CSS, Git</li>
+                        <li><strong>Status:</strong> In Progress</li>
+                    </ul>
+                </article>
 
-            <article>
-                <h3>Interactive Web App</h3>
-                <p>Frontend web application focusing on user interactions, clean interfaces, and responsive layout structures.</p>
-                <ul>
-                    <li>Tech Stack: HTML, CSS, JavaScript</li>
-                    <li>Status: Planned</li>
-                </ul>
-            </article>
+                <article class="card">
+                    <h3>Interactive Web App</h3>
+                    <p>Frontend web application focusing on user interactions, clean interfaces, and responsive layout structures.</p>
+                    <ul class="skills-list">
+                        <li><strong>Tech Stack:</strong> HTML, CSS, JavaScript</li>
+                        <li><strong>Status:</strong> Planned</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h3>E-Commerce Interface</h3>
+                    <p>Responsive storefront interface prototype designed with accessible UI card layouts.</p>
+                    <ul class="skills-list">
+                        <li><strong>Tech Stack:</strong> HTML, CSS Grid</li>
+                        <li><strong>Status:</strong> Concept</li>
+                    </ul>
+                </article>
+            </div>
         </section>
     </main>
 
