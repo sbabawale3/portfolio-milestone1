@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About &amp; Contact | Adeoluwa Babawale Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -13,7 +17,7 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="projects.html">Projects</a></li>
-                <li><a href="about.html">About &amp; Contact</a></li>
+                <li><a href="about.html" class="active">About &amp; Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -23,21 +27,28 @@
             <h2>About Me</h2>
             <p>I am a student and developer focused on building functional, accessible web applications and expanding my software development skills.</p>
             
-            <article>
-                <h3>Background &amp; Interests</h3>
-                <p>My work combines web design, logical problem solving, and building tools that deliver clean user experiences.</p>
-            </article>
+            <div class="grid-container">
+                <article class="card">
+                    <h3>Background &amp; Focus</h3>
+                    <p>My work combines web design, logical problem solving, and building tools that deliver clean user experiences.</p>
+                </article>
+                <article class="card">
+                    <h3>Development Goals</h3>
+                    <p>Continuously deepening frontend architecture skills, responsive layouts, and modern web accessibility practices.</p>
+                </article>
+            </div>
         </section>
 
         <section id="contact-info">
             <h2>Get In Touch</h2>
-            <p>Feel free to reach out for collaborations, project inquiries, or web development discussions.</p>
-            
-            <ul>
-                <li><strong>Location:</strong> New Jersey, USA</li>
-                <li><strong>GitHub:</strong> <a href="https://github.com" target="_blank" rel="noopener">My GitHub Profile</a></li>
-                <li><strong>Email:</strong> contact@example.com</li>
-            </ul>
+            <div class="card">
+                <p>Feel free to reach out for collaborations, project inquiries, or web development discussions.</p>
+                <ul class="contact-list">
+                    <li><strong>Location:</strong> New Jersey, USA</li>
+                    <li><strong>GitHub:</strong> <a href="https://github.com/sbabawale3" target="_blank" rel="noopener">github.com/sbabawale3</a></li>
+                    <li><strong>Email:</strong> contact@example.com</li>
+                </ul>
+            </div>
         </section>
     </main>
 
