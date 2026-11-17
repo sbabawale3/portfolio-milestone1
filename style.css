@@ -4,13 +4,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap');
 
 :root {
-    /* Color Palette */
+    /* Color Palette — used consistently on Home, Projects, and About & Contact */
     --primary-navy: #0F172A;
     --accent-blue: #2563EB;
+    --accent-blue-dark: #1E40AF;
     --bg-light: #F8FAFC;
     --text-slate: #334155;
     --card-white: #FFFFFF;
     --border-subtle: #E2E8F0;
+    --input-border: #475569;
+    --error-text: #991B1B;
+    --success-text: #166534;
+    --focus-on-dark: #93C5FD;
 
     /* 8px Base Spacing System */
     --space-8: 8px;
@@ -61,6 +66,69 @@ main {
     flex: 1;
 }
 
+main:focus {
+    outline: none;
+}
+
+main:focus-visible {
+    outline: none;
+}
+
+/* In-content links use color AND underline (not color alone) */
+main a {
+    color: var(--accent-blue);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+main a:hover,
+main a:focus-visible {
+    color: var(--accent-blue-dark);
+}
+
+/* ==========================================================================
+   SKIP LINK & FOCUS STYLES
+   ========================================================================== */
+.skip-link {
+    position: absolute;
+    left: var(--space-16);
+    top: -100px;
+    z-index: 1000;
+    background-color: var(--accent-blue);
+    color: #FFFFFF;
+    padding: var(--space-8) var(--space-16);
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.skip-link:focus {
+    top: var(--space-8);
+}
+
+:focus-visible {
+    outline: 3px solid var(--accent-blue);
+    outline-offset: 3px;
+}
+
+header :focus-visible,
+footer :focus-visible,
+.skip-link:focus-visible {
+    outline-color: var(--focus-on-dark);
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 /* ==========================================================================
    HEADER & NAVIGATION (Flexbox Layout)
    ========================================================================== */
@@ -94,7 +162,8 @@ nav a {
 }
 
 nav a:hover,
-nav a.active {
+nav a.active,
+nav a[aria-current="page"] {
     background-color: var(--accent-blue);
 }
 
@@ -110,14 +179,24 @@ nav a.active {
     margin-bottom: var(--space-32);
 }
 
-#project-list, #about-me, #contact-info {
-    margin-bottom: var(--space-32);
+/* Gestalt — Proximity: related content in a section sits closer together
+   than the space that separates one section from the next. */
+#project-list,
+#about-me,
+#contact-info,
+#contact-form-section,
+#featured,
+#highlights,
+#practice-defects {
+    margin-bottom: var(--space-48);
 }
 
 /* ==========================================================================
    CLASS SELECTORS (Selector Type 3) & GRID LAYOUTS
    ========================================================================== */
 /* Multi-column Grid Layout for Cards */
+/* Gestalt — Proximity: cards in a group share a tighter gap (24px) than
+   the 48px margin that separates the group from neighboring sections. */
 .grid-container {
     display: grid;
     grid-template-columns: 1fr; /* Mobile Default */
@@ -125,12 +204,23 @@ nav a.active {
     margin-top: var(--space-16);
 }
 
+/* Gestalt — Common Region: a shared white background, border, radius,
+   and shadow enclose related content so it reads as one unit. */
 .card {
     background-color: var(--card-white);
     padding: var(--space-24);
     border-radius: 8px;
     border: 1px solid var(--border-subtle);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+}
+
+/* Inside a card, heading and body sit close together (proximity). */
+.card h3 {
+    margin-bottom: var(--space-8);
+}
+
+.card p:last-child {
+    margin-bottom: 0;
 }
 
 .skills-list, .contact-list {
@@ -140,6 +230,172 @@ nav a.active {
 
 .skills-list li, .contact-list li {
     margin-bottom: var(--space-8);
+}
+
+.skills-list li:last-child,
+.contact-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+   ACCESSIBLE CONTACT FORM
+   ========================================================================== */
+.form-card {
+    max-width: 640px;
+}
+
+form fieldset {
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    padding: var(--space-16) var(--space-24) var(--space-24);
+    margin: 0 0 var(--space-24);
+}
+
+form legend {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    color: var(--primary-navy);
+    padding: 0 var(--space-8);
+}
+
+.form-field {
+    margin-top: var(--space-16);
+}
+
+.form-field label,
+.radio-option label {
+    display: block;
+    font-weight: 500;
+    color: var(--primary-navy);
+    margin-bottom: var(--space-8);
+}
+
+.required {
+    color: var(--error-text);
+    font-weight: 700;
+}
+
+.form-field input[type="text"],
+.form-field input[type="email"],
+.form-field textarea,
+#practice-unlabeled {
+    width: 100%;
+    max-width: 100%;
+    font: inherit;
+    color: var(--primary-navy);
+    background-color: var(--card-white);
+    border: 2px solid var(--input-border);
+    border-radius: 4px;
+    padding: var(--space-8) var(--space-16);
+}
+
+#practice-unlabeled {
+    display: block;
+    width: 100%;
+    max-width: 20rem;
+    margin-left: 0;
+    margin-top: var(--space-8);
+}
+
+.form-field textarea {
+    resize: vertical;
+    min-height: 8rem;
+}
+
+.form-field input[aria-invalid="true"],
+.form-field textarea[aria-invalid="true"],
+fieldset[aria-invalid="true"] {
+    border-color: var(--error-text);
+}
+
+.hint {
+    margin: var(--space-8) 0 0;
+    color: var(--input-border);
+    font-size: 0.95rem;
+}
+
+.error-message {
+    margin: var(--space-8) 0 0;
+    color: var(--error-text);
+    font-weight: 600;
+    min-height: 1.25em;
+}
+
+.error-message:not(:empty) {
+    border-left: 4px solid var(--error-text);
+    padding-left: var(--space-8);
+}
+
+.radio-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-16) var(--space-24);
+    margin-top: var(--space-8);
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+}
+
+.radio-option label {
+    margin: 0;
+    font-weight: 500;
+}
+
+.radio-option input[type="radio"] {
+    width: 1.1em;
+    height: 1.1em;
+    accent-color: var(--accent-blue);
+    flex-shrink: 0;
+}
+
+/* Gestalt — Similarity: the submit button shares the accent-blue
+   background, white text, and rounded corners used by navigation links,
+   so primary actions look like the same kind of interactive control. */
+button[type="submit"] {
+    font: inherit;
+    font-weight: 600;
+    color: #FFFFFF;
+    background-color: var(--accent-blue);
+    border: 2px solid var(--accent-blue);
+    border-radius: 4px;
+    padding: var(--space-8) var(--space-16);
+    cursor: pointer;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus-visible {
+    background-color: var(--accent-blue-dark);
+    border-color: var(--accent-blue-dark);
+}
+
+.form-status {
+    margin-bottom: var(--space-16);
+}
+
+.form-status:not(:empty) {
+    padding: var(--space-16);
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.form-status.is-error {
+    color: var(--error-text);
+    background-color: #FEF2F2;
+    border: 2px solid var(--error-text);
+}
+
+.form-status.is-success {
+    color: var(--success-text);
+    background-color: #F0FDF4;
+    border: 2px solid var(--success-text);
+}
+
+.form-status:focus {
+    outline: 3px solid var(--accent-blue);
+    outline-offset: 3px;
 }
 
 /* Footer Styling */
